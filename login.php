@@ -1,18 +1,5 @@
 <?php
-// Database connection parameters
-$servername = "db";
-$username = "gabriele";
-$password = "fanti";
-$dbname = "sitodb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include 'db.php';
 // Fetching values from the login form
 $name = $_POST['name'];
 $surname = $_POST['surname'];
@@ -23,7 +10,7 @@ $sql = "SELECT * FROM users WHERE name='$name' AND surname='$surname' AND passwo
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "Login successful!";
+    header("Location: home.php");
 } else {
     echo "Invalid login credentials!";
 }
