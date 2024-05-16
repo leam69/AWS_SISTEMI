@@ -2,6 +2,7 @@
 // Include auth.php to get $name variable
 include 'auth.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +35,6 @@ include 'auth.php';
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#update_repo_aws">Update Repo on AWS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php">Logout</a>
         </li>
       </ul>
     </div>
