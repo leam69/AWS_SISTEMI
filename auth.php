@@ -3,7 +3,7 @@
 session_start();
 
 function isAuthenticated(){
-    return isset($_SESSION['id']);
+    return isset($_SESSION['surname']);
 }
 
 function goToLogin(){
@@ -15,9 +15,6 @@ if(!isAuthenticated()){
     goToLogin();
     
 }
-
-$id = $_SESSION['id'];
-$name = $_SESSION['username'];
 
 
 
