@@ -4,11 +4,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "db.php";
     
   
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $name = mysqli_real_escape_string($conn, $_POST['name']);
+ $surname = mysqli_real_escape_string($conn, $_POST['surname']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
   
-  $sql = "SELECT id, username, email password FROM utenti WHERE username='$username' AND password='$password'";
+  $sql = "SELECT id, name, surname, password FROM users WHERE name ='$name' AND surname='$surname' AND password='$password'";
 
 
   $result = $conn->query($sql);
