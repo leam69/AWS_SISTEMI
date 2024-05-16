@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+session_start();
 // Fetching values from the login form
 $name = $_POST['name'];
 $surname = $_POST['surname'];
@@ -10,6 +11,9 @@ $sql = "SELECT * FROM users WHERE name='$name' AND surname='$surname' AND passwo
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+
+    $_SESSION['username'] = $name;
+    $_SESSION['id'] = $row['id'];
     header("Location: home.php");
 } else {
     echo "Invalid login credentials!";
