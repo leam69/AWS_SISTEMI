@@ -2,7 +2,6 @@
 // Include auth.php to get $name variable
 include 'auth.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@ include 'auth.php';
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><?php echo $_SESSION['username'] ?></a>
+    <a class="navbar-brand" href="#"><?php echo $name ?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,6 +34,9 @@ include 'auth.php';
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#update_repo_aws">Update Repo on AWS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
         </li>
       </ul>
     </div>
@@ -100,4 +102,3 @@ include 'auth.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
