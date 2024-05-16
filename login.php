@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Successful login
     session_start();  
     $_SESSION['id'] = $row['id'];
-    $_SESSION['username'] = $surname;
+    $_SESSION['surname'] = $surname;
 
 
     header('Location: home.php');
-    exit;
+    
   } else {
 
     echo "Invalid username or password, go back to". "<a href='index.php'>login</a>... ";
