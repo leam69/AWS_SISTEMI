@@ -1,23 +1,37 @@
 <?php
-include 'db.php';
-session_start();
-// Fetching values from the login form
-$name = $_POST['name'];
-$surname = $_POST['surname'];
-$password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// Query to check if user exists in the database
-$sql = "SELECT * FROM users WHERE name='$name' AND surname='$surname' AND password='$password'";
-$result = $conn->query($sql);
+    include "db.php";
+    
+  
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-if ($result->num_rows > 0) {
+  
+  $sql = "SELECT id, username, email password FROM utenti WHERE username='$username' AND password='$password'";
 
-    $_SESSION['username'] = $surname;
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+
+    // Successful login
+    session_start();  
     $_SESSION['id'] = $row['id'];
-    header("Location: home.php");
-} else {
-    echo "Invalid login credentials!";
-}
+    $_SESSION['username'] = $surname;
 
-$conn->close();
+
+    header('Location: home.php');
+    exit;
+  } else {
+
+    echo "Invalid username or password, go back to". "<a href='index.php'>login</a>... ";
+  }
+
+
+  if (isset($result)) {
+    $result->close();
+  }
+}
 ?>
