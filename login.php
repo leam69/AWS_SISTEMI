@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
 
   
-  $sql = "SELECT id, name, surname, password FROM users WHERE name ='$name' AND surname='$surname' AND password='$password'";
+  $sql = "SELECT name, surname, password FROM users WHERE name ='$name' AND surname='$surname' AND password='$password'";
 
 
   $result = $conn->query($sql);
@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Successful login
     session_start();  
-    $_SESSION['id'] = $row['id'];
     $_SESSION['surname'] = $surname;
 
 
