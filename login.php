@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 
-  if (isset($result)) {
+  
     $result->close();
-  }
+
 }
 ?>
