@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "db.php";
     
   
-  $name = mysqli_real_escape_string($conn, $_POST['name']);
+  $name = $_POST['name']);
  $surname = mysqli_real_escape_string($conn, $_POST['surname']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -27,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
   } else {
 
-    echo "Invalid username or password, go back to". "<a href='index.php'>login</a>... ";
+    echo "Invalid username or password, go back to ". "<a href='index.php'>login</a>... ";
   }
 
 
   
-    $result->close();
+    $conn->close();
 
 }
 ?>
