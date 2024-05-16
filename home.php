@@ -1,7 +1,5 @@
-
-
 <?php
-
+// Include auth.php to get $name variable
 include 'auth.php';
 ?>
 
@@ -54,7 +52,7 @@ include 'auth.php';
         <li>Install Docker Compose:</li>
         <li>Create the project folder:</li>
       </ul>
-      <button class="btn btn-primary">Get Started</button>
+      <a href="https://example.com/initial_configuration_help" class="btn btn-primary">Get Started</a>
     </section>
 
     <!-- Add Nginx and SSL -->
@@ -66,7 +64,7 @@ include 'auth.php';
         <li>Create SSL certificate</li>
         <li>Connect SSL to Nginx container</li>
       </ul>
-      <button class="btn btn-primary">Learn More</button>
+      <a href="https://example.com/add_nginx_ssl_help" class="btn btn-primary">Learn More</a>
     </section>
 
     <!-- Configure PHP -->
@@ -78,21 +76,21 @@ include 'auth.php';
         <li>Clone the repo</li>
         <li>Create Nginx default configuration file</li>
       </ul>
-      <button class="btn btn-primary">See Instructions</button>
+      <a href="https://example.com/configure_php_help" class="btn btn-primary">See Instructions</a>
     </section>
 
     <!-- Container -->
     <section id="container" class="mb-5">
       <h2>Container</h2>
       <p>Manage containers for your project:</p>
-      <button class="btn btn-primary">View Containers</button>
+      <a href="https://example.com/container_help" class="btn btn-primary">View Containers</a>
     </section>
 
     <!-- Update Repo on AWS -->
     <section id="update_repo_aws">
       <h2>Update Repo on AWS</h2>
       <p>Keep your repository updated on AWS:</p>
-      <button class="btn btn-primary">Update Repo</button>
+      <a href="https://example.com/update_repo_aws_help" class="btn btn-primary">Update Repo</a>
     </section>
   </div>
 
@@ -102,3 +100,4 @@ include 'auth.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
