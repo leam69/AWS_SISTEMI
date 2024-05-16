@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 
-    $_SESSION['username'] = $name;
+    $_SESSION['username'] = $surname;
     $_SESSION['id'] = $row['id'];
     header("Location: home.php");
 } else {
