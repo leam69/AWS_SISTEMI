@@ -4,9 +4,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "db.php";
     
   
-  $name = $_POST['name']);
- $surname = mysqli_real_escape_string($conn, $_POST['surname']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
+  $name = $_POST['name'];
+ $surname = $_POST['surname'];
+  $password = $_POST['password'];
 
   
   $sql = "SELECT id, name, surname, password FROM users WHERE name ='$name' AND surname='$surname' AND password='$password'";
