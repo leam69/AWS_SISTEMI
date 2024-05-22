@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
 
-    // Successful login
+   
     session_start();  
     $_SESSION['surname'] = $surname;
+      $_SESSION['name'] = $name;
 
 
     header('Location: home.php');
